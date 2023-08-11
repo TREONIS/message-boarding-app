@@ -1,8 +1,4 @@
-'''
-Created on 29 Aug 2017
 
-@author: Michael
-'''
 from datetime import datetime
 import time
 import SQLiteAdapter as db
