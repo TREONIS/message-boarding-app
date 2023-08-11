@@ -26,9 +26,6 @@ class Message(object):
         self.topic = topic
         self.modified = modified
         self.likes = likes
-        self.dislikes = dislikes
-        self.timestamp = timestamp
-        
     def save(self):
         '''
             Adds this object to the database if no id exists, otherwise it updates.
