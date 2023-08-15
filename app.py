@@ -130,10 +130,6 @@ def search_topics():
     #We're returning json
     bottle.response.content_type = 'application/json'
     
-    #We don't want to send back a json array, it must start with a key-value
-    #This is due to a subtle json vulnerability, read more on:
-    # http://haacked.com/archive/2009/06/25/json-hijacking.aspx/
-    # http://haacked.com/archive/2008/11/20/anatomy-of-a-subtle-json-vulnerability.aspx/
     res = {'results':[]}
     
     if topics:
@@ -253,11 +249,6 @@ def dislike_message(message_id=''):
     bottle.redirect('/')
 
 
-
-###################################################################################
-### Application Initialisation
-###################################################################################
-
 #Initialize session details
 SESSION_OPTIONS = {
     'session.auto': True,
@@ -284,9 +275,6 @@ if __name__ == '__main__':
     
     if len(sys.argv)>1:
         if sys.argv[1]=='--init-db':
-            #We're going to drop tables if they exists
-            #then create them.
-            #This will reset all topics and messages
             import SQLiteAdapter
             SQLiteAdapter.initialize_db()
             
