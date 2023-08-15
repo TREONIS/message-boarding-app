@@ -28,10 +28,6 @@ def send_static(filename):
     '''Loads static files from /js. Store all .js files there.'''
     return bottle.static_file(filename, root='./static/js/')
 
-
-#Home page / + Filter pages /popular /liked /disliked
-# -lists recent topics
-# -add topic
 @app.route('/')
 def home():
     session = bottle.request.environ.get('beaker.session')  #@UndefinedVariable
