@@ -1,14 +1,3 @@
-'''
-Created on 28 Aug 2017
-
-@author: Michael Bauer
-
-@sumary: A basic web application built to demonstrate simple web 
-         application built in bottle and how to secure again a
-         couple common security threats. 
-         This application is a simple messageboard app where users
-         can create a topic and post messages under the topic.
-'''
 
 import sys,os
 import socket
@@ -21,7 +10,6 @@ from beaker.middleware import SessionMiddleware
 import Topics
 import Messages
 
-#Initialize webapp
 app = Bottle()
 
 ###################################################################################
