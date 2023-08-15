@@ -12,9 +12,6 @@ import Messages
 
 app = Bottle()
 
-###################################################################################
-### Serve Static Files
-###################################################################################
 
 @app.route('/styles/<filename>')
 def serve_style(filename):
@@ -31,9 +28,6 @@ def send_static(filename):
     '''Loads static files from /js. Store all .js files there.'''
     return bottle.static_file(filename, root='./static/js/')
 
-###################################################################################
-### Application Main Pages
-###################################################################################
 
 #Home page / + Filter pages /popular /liked /disliked
 # -lists recent topics
